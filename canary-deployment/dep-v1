@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep-v1
+  name: dep-v1
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: dep-v1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep-v1
+        dep: canary  #use this label in the v2 version yaml file & service.yaml
+    spec:
+      containers:
+      - image: surya9961/k8sdep:v1
+        name: k8sdep
+        resources: {}
+status: {}
