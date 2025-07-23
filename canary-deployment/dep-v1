@@ -1,3 +1,5 @@
+## kubectl create deployment dep-v1 --image=surya9961/k8sdep:v1 --replicas=4 --dry-run=client -o yaml > dep-v1.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
