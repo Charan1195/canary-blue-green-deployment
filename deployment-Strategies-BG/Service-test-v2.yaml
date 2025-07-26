@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-test
+spec:
+  selector:
+    app: webapp
+    version: v2
+  ports:
+    - port: 80
+      targetPort: 80
+  type: NodePort  # or LoadBalancer, your choice
+
+# http://<Node-IP>:30080 ----use node ip address and nodeport id (30000-32767)
